@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Albert Einstein — Personal Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+<header class="site-header">
+  <h1>Albert Einstein</h1>
+  <p>Physicist &middot; Thinker &middot; Forever a student</p>
+</header>
+
+<main>
+  <section class="hero" aria-label="Introduction">
+    <figure class="portrait">
+      <img src="images/einstein.jpg" alt="Portrait of Albert Einstein sticking out his tongue">
+    </figure>
+    <div class="intro">
+      <h2>Welcome</h2>
+      <p>I am delighted to meet you in this wonderful new age. Curiosity has always been my
+      greatest teacher, and I hope this page shares a little of it with you.</p>
+      <p>In 1905 I published four papers that changed how we see light, atoms, space and time,
+      and in 1921 I received the Nobel Prize in Physics. You can read more about my life on
+      <a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank" rel="noopener">Wikipedia</a>.</p>
+    </div>
+  </section>
+
+  <section id="papers" aria-labelledby="papers-title">
+    <h2 id="papers-title">Published Papers</h2>
+    <div id="paper-grid" class="paper-grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Albert Einstein. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

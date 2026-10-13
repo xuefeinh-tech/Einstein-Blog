@@ -1,0 +1,96 @@
+/* Einstein personal website — layout built with CSS Grid */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f6f2ea;
+  --card: #fffdf8;
+  --ink: #3c4a5a;
+  --muted: #6f7b87;
+  --sage: #8fa89a;
+  --gold: #b89b63;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Page grid: centered 1100px column on any screen, side gutters grow on big screens */
+.page {
+  display: grid;
+  grid-template-columns: minmax(16px, 1fr) minmax(0, 1100px) minmax(16px, 1fr);
+}
+.page > * { grid-column: 2; }
+
+a { color: var(--gold); }
+
+h1 { font-size: 40px; letter-spacing: 1px; font-weight: normal; }
+h2 {
+  font-size: 26px;
+  font-weight: normal;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--sage);
+  display: inline-block;
+}
+p { margin-bottom: 12px; }
+
+/* Header and footer */
+.site-header { text-align: center; padding: 56px 0 32px; }
+.site-header p { color: var(--muted); font-style: italic; }
+.site-footer { text-align: center; color: var(--muted); font-size: 14px; padding: 40px 0 28px; }
+
+/* Hero: photo + intro */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  border: 6px solid var(--card);
+  box-shadow: 0 6px 20px rgba(60, 74, 90, 0.15);
+}
+
+/* Papers: same 3-column grid on small laptops and big screens; new cards flow into new rows */
+.paper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.paper {
+  background: var(--card);
+  border: 1px solid #e6dfd0;
+  border-top: 4px solid var(--sage);
+  border-radius: 6px;
+  padding: 22px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  justify-items: start;
+}
+.paper img { width: 44px; height: 44px; }
+.paper h3 { font-size: 16px; font-weight: normal; line-height: 1.4; }
+.paper .year { color: var(--gold); font-size: 14px; }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .paper-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Phone (iPhone) */
+@media (max-width: 600px) {
+  h1 { font-size: 30px; }
+  .site-header { padding: 36px 0 20px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; margin-bottom: 44px; }
+  .portrait { max-width: 280px; margin: 0 auto; }
+  .paper-grid { grid-template-columns: 1fr; gap: 16px; }
+}
